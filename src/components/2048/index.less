@@ -1,0 +1,27 @@
+.component-game-2048 {
+    font-family: 'Microsoft YaHei';
+    .block-container {
+        .row {
+            display: grid;
+            grid-template-columns: repeat(4, 0.95fr);
+            max-width: 400px;
+            height: 100px;
+            background-color: #bfc0bb;
+
+            .block {
+                height: 90%;
+                margin: 5%;
+                box-sizing: border-box;
+                border: 1px solid #cccccc;
+                border-radius: 5px;
+                background-color: #00a7ff;
+                span {
+                    vertical-align: middle;
+                    font-size: 22px;
+                    font-weight: 600;
+                    color: #656565;
+                }
+            }
+        }
+    }
+}

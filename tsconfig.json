@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "removeComments": true,
+        "esModuleInterop": true,
+        "noImplicitThis": true, // 不允许存在不明确的this指向
+        "sourceMap": true,
+        "strictNullChecks": true, // 严格的null检查
+        "jsx": "react",
+        "baseUrl": ".",
+        "paths": {
+            "@icons/*": ["./src/icons/*", ".src/icons/firstScreen/*"]
+        }
+    },
+    "exclude": ["node_modules"]
+}

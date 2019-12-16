@@ -1,0 +1,73 @@
+.image-viewer {
+  @buttonBarHeight: 40px;
+  width: 100%;
+  height: 100%;
+
+  .image-container {
+    position: relative;
+    height: calc(100% - @buttonBarHeight);
+    overflow: hidden;
+
+    .zoom-ratio-notice {
+      @width: 100px;
+      @heigh: 30px;
+      display: none;
+      position: absolute;
+      left: calc(50% - @width / 2);
+      top: calc(50% - @heigh / 2);
+      width: @width;
+      height: @heigh;
+      background-color: #000000;
+      color: #ffffff;
+      font-size: 22px;
+      text-align: center;
+      border-radius: 10px;
+      z-index: 1000;
+
+      &.visible {
+        display: block;
+      }
+    }
+
+    .image {
+      position: absolute;
+      transition: transform 200ms, width 200ms, height 200ms, top 200ms, left 200ms;
+    }
+
+    .fade-enter {
+      position: absolute;
+      opacity: 0.2;
+    }
+
+    .fade-enter-active {
+      opacity: 1;
+      transition: opacity 300ms linear;
+    }
+
+    .fade-exit {
+      opacity: 1;
+    }
+
+    .fade-exit-active {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 300ms, transform 300ms;
+    }
+  }
+
+  .bottom-tool {
+    height: 40px;
+
+    > div {
+      margin: 0 5px;
+    }
+
+    .btn {
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      transition: scale 0.5s linear;
+    }
+  }
+}

@@ -1,0 +1,3 @@
+FROM nginx:latest
+ADD ./dist/ /var/html/
+CMD ["/usr/sbin/nginx","-g","daemon off;"]
