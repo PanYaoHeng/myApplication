@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable */
 const merge = require('webpack-merge');
 const path = require('path');
 const webpack = require('webpack');
@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const cssnano = require('cssnano');
+const caaNano = require('cssnano');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = merge({
@@ -62,7 +62,7 @@ module.exports = merge({
             ignoreOrder: false
         }),
         new OptimizeCSSAssetsPlugin({
-            cssProcessor: cssnano,
+            cssProcessor: caaNano,
             cssProcessorOptions: {
                 discardComments: {
                     removeAll: true
