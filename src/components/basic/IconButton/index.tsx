@@ -4,7 +4,7 @@ import Icon from '../Icon/index';
 import './index.less';
 interface Props {
     className?: string;
-    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onClick: () => void;
     iconName: string;
     size?: string;
     disable?: boolean;
@@ -15,9 +15,9 @@ function IconButton(props: Props) {
     const clsn = `component-icon-button ${className} ${disable ? 'disabled' : ''}`;
     return (
         <div className={clsn}>
-            <button className="btn" onClick={onClick}>
+            <div className="btn" onClick={onClick}>
                 <Icon iconName={iconName} />
-            </button>
+            </div>
         </div>
     );
 }

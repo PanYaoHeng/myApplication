@@ -287,7 +287,7 @@ function ImageViewer(props: PropsType) {
                     </CSSTransition>
                 </SwitchTransition>
             </div>
-            <div className="bottom-tool flex-verticl-horizon-center">
+            <div className="bottom-tool vertical-center horizon-center">
                 <IconButton onClick={() => zoom(zoomRatio + 10)} iconName="zoom-in" />
                 <IconButton onClick={() => zoom(zoomRatio - 10)} iconName="zoom-out" />
                 <IconButton

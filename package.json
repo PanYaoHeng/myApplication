@@ -1,7 +1,8 @@
 {
   "name": "react_typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "my application",
+  "repository": "none",
   "main": "index.js",
   "sideEffects": [
     "*.less",
@@ -60,6 +61,7 @@
   },
   "dependencies": {
     "alloyfinger": "^0.1.16",
+    "core-js": "^3.6.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-transition-group": "^4.3.0",

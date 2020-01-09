@@ -49,7 +49,7 @@ function Game2048(props) {
                             {numbers.map((number, index) => {
                                 return (
                                     <div
-                                        className="block flex-verticl-horizon-center"
+                                        className="block vertical-center horizon-center"
                                         key={index}
                                         style={{ backgroundColor: getColor(number) }}
                                     >

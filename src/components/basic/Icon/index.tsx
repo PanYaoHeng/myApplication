@@ -15,7 +15,7 @@ function Icon(params: Params) {
         height: size,
         width: size
     };
-    return <div className={cs} style={style}></div>;
+    return <div className={cs} style={style}/>;
 }
 
 Icon.propTypes = {

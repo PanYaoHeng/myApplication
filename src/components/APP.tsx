@@ -8,6 +8,8 @@ import ImageViewer from './basic/pc/ImageViewer/index';
 import background from '../images/background.jpg';
 import pic1 from '../images/pic1.png';
 
+import { AnnualizedReturns } from './annualizedReturns';
+
 const imageList = [{ src: background }, { src: pic1 }];
 const rootContainer = document.getElementById('root') as HTMLDivElement;
 
@@ -41,11 +43,17 @@ function APP() {
 
         window.addEventListener(eventName, handleOrientationChange);
         handleOrientationChange();
+
+        const loadingElement = document.getElementById('loading');
+        if (loadingElement) {
+            // loadingElement.remove();
+        }
+
         return () => {};
     }, []);
     return (
         <>
-            <header className="header flex-vertical-center">
+            <header className="header vertical-center">
                 {/* <IconButton iconName="edit" onClick={handleClick} />
                 <IconButton iconName="home" onClick={handleClick} />
                 <IconButton iconName="back" onClick={handleClick} />
@@ -54,11 +62,12 @@ function APP() {
                 <IconButton iconName="search" onClick={handleClick} /> */}
             </header>
             <main className="main-content">
+                {/*<AnnualizedReturns />*/}
                 {/* <Game2048/> */}
                 {/* <ImageViewer imageList={imageList} onClose={() => undefined} /> */}
             </main>
             <footer className="footer">
-                <div className="content flex-vertical-center">
+                <div className="content vertical-center">
                     {/* <IconButton iconName="edit" onClick={handleClick} />
                     <IconButton iconName="home" onClick={handleClick} />
                     <IconButton iconName="back" onClick={handleClick} />
