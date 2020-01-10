@@ -26,7 +26,7 @@ IconButton.propTypes = {
     className: PropTypes.string,
     onClick: PropTypes.func.isRequired,
     iconName: PropTypes.string.isRequired,
-    size: PropTypes.string
+    size: PropTypes.string,
 };
 
 export default IconButton;

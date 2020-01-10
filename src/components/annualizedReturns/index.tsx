@@ -8,13 +8,19 @@ export const AnnualizedReturns: React.FC = (props) => {
     function triggerShow() {
         setShowModal(!showModal);
     }
+    function closeModal() {
+        setShowModal(false);
+    }
+    function handleOK() {
+        closeModal();
+    }
 
     return (
         <div className="annualized-returns">
             <button onClick={triggerShow}>trigger</button>
             {showModal && (
-                <Modal onClose={() => setShowModal(false)} title="title">
-                    <MyComponent/>
+                <Modal onClose={closeModal} onOK={handleOK} title="title">
+                    <MyComponent />
                 </Modal>
             )}
         </div>
@@ -29,5 +35,11 @@ function MyComponent(props) {
         };
     }, []);
 
-    return <div>asdfasdf</div>;
+    return (
+        <div>
+            <div>asdfasdf</div>
+            <div>asdfasdf</div>
+            <div>asdfasdf</div>
+        </div>
+    );
 }

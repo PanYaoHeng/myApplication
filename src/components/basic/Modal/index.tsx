@@ -1,8 +1,8 @@
 import React, { useEffect, Fragment, ReactElement, ReactNode } from 'react';
-import PropTypes from 'prop-types';
 import { render, unmountComponentAtNode } from 'react-dom';
 import './index.less';
 import IconButton from '../IconButton';
+import { Button, ButtonTypes } from '../Button';
 
 let modalRootContainer = document.getElementById('modal-root');
 if (!modalRootContainer) {
@@ -16,16 +16,23 @@ interface Props {
     showHeader?: boolean;
     showFooter?: boolean;
     onClose: () => void;
+    onOK: () => void;
+    okText?: string;
+    cancelText?: string;
 }
 
 export const Modal: React.FC<Props> = (props) => {
-    const { children, showHeader, showFooter, onClose, title } = props;
+    const { children, showHeader, showFooter, onClose, title, onOK, okText, cancelText } = props;
     useEffect(() => {
         const container = document.createElement('div');
         container.classList.add('modal-container');
         container.classList.add('vertical-center');
         container.classList.add('horizon-center');
-        container.addEventListener('click', onClose);
+        container.addEventListener('click', (event) => {
+            if (event.target === container) {
+                onClose();
+            }
+        });
         (modalRootContainer as HTMLElement).appendChild(container);
 
         const component = (
@@ -37,7 +44,14 @@ export const Modal: React.FC<Props> = (props) => {
                     </div>
                 )}
                 <div className="modal-body">{children}</div>
-                {showFooter && <div className="modal-footer">footer</div>}
+                {showFooter && (
+                    <div className="modal-footer">
+                        <Button onClick={onClose}>{cancelText}</Button>
+                        <Button className="confirm-btn" onClick={onOK} type={ButtonTypes.Primary}>
+                            {okText}
+                        </Button>
+                    </div>
+                )}
             </div>
         );
         render(component, container);
@@ -52,5 +66,7 @@ export const Modal: React.FC<Props> = (props) => {
 Modal.defaultProps = {
     showHeader: true,
     showFooter: true,
-    title: ''
+    title: '',
+    cancelText: 'cancel',
+    okText: 'OK'
 };
