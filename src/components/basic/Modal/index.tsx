@@ -24,10 +24,8 @@ interface Props {
 
 export const Modal: React.FC<Props> = (props) => {
     const { children, showHeader, showFooter, onClose, title, onOK, okText, cancelText } = props;
-    useEffect(() => {
-        document.body.style.overflow = 'hidden';
-        document.body.style.width = `calc(100% - ${getScrollbarWidth()}px)`;
 
+    useEffect(() => {
         const container = document.createElement('div');
         container.classList.add('modal-container');
         container.classList.add('vertical-center');
@@ -70,10 +68,22 @@ export const Modal: React.FC<Props> = (props) => {
         return () => {
             unmountComponentAtNode(container);
             container.remove();
-            document.body.style.overflow = '';
-            document.body.style.width = '';
         };
-    }, [children, showHeader, showFooter]);
+    }, [children, showHeader, showFooter, onClose, title, onOK, okText, cancelText]);
+
+    useEffect(() => {
+        const hasScrollBar = document.body.scrollHeight > window.innerHeight;
+        if (hasScrollBar) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.width = `calc(100% - ${getScrollbarWidth()}px)`;
+        }
+        return () => {
+            if (hasScrollBar) {
+                document.body.style.overflow = '';
+                document.body.style.width = '';
+            }
+        };
+    }, []);
 
     return null;
 };
