@@ -40,7 +40,7 @@ export const Modal: React.FC<Props> = (props) => {
         const header = showHeader ? (
             <div className="modal-header vertical-center">
                 <span>{title}</span>
-                <IconButton iconName="close" onClick={onClose} />
+                <IconButton className="close-btn" iconName="close" onClick={onClose} />
             </div>
         ) : null;
 

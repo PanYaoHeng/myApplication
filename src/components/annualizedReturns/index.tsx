@@ -19,7 +19,7 @@ export const AnnualizedReturns: React.FC = (props) => {
         <div className="annualized-returns">
             <button onClick={triggerShow}>trigger</button>
             {showModal && (
-                <Modal onClose={closeModal} onOK={handleOK} title="title">
+                <Modal onClose={closeModal} onOK={handleOK} title="长标题长标题长标题长标题长标题长标题长标题长标题长标题长标题" okText="确认" cancelText="取消">
                     <MyComponent />
                 </Modal>
             )}
@@ -43,3 +43,17 @@ function MyComponent(props) {
         </div>
     );
 }
+
+class Base {
+    public static getInstance(name: string) {
+        return new Base(name);
+    }
+    public readonly name: string;
+    protected code : string;
+    protected constructor(name: string) {
+        this.code = 'abc';
+        this.name = name;
+    }
+}
+const base = Base.getInstance('tom');
+console.log(base.name);
