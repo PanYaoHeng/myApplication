@@ -66,12 +66,5 @@
     "react-dom": "^16.13.1",
     "react-transition-group": "^4.3.0",
     "redux": "^4.0.5"
-  },
-  "browserslist": [
-    "iOS >= 9",
-    "Android >= 4.4",
-    "ie >= 11",
-    "chrome >= 47",
-    "last 5 version"
-  ]
+  }
 }

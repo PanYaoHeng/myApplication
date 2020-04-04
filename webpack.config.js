@@ -27,7 +27,24 @@ module.exports = function(env, argv) {
                 {
                     test: /\.(ts|js)x?$/,
                     exclude: /node_modules/,
-                    loader: ['babel-loader']
+                    loader: {
+                        loader: 'babel-loader',
+                        options: {
+                            "presets": [["@babel/preset-env", {
+                                "targets": "last 2 Chrome versions"
+                            }], "@babel/preset-typescript", "@babel/preset-react"],
+                            "plugins": [
+                                "@babel/plugin-proposal-class-properties",
+                                "@babel/plugin-proposal-object-rest-spread",
+                                "@babel/plugin-syntax-dynamic-import"
+                            ],
+                            "env": {
+                                "production": {
+                                    "plugins": ["transform-react-remove-prop-types"]
+                                }
+                            }
+                        }
+                    }
                 }
             ]
         },
