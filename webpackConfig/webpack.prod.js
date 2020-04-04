@@ -55,7 +55,9 @@ module.exports = merge({
         minimizer: [new TerserPlugin({ sourceMap: true })]
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        // 跑一次webpack任务只执行一次clean插件，所以这里要指定清理目录，不能依靠默认的清理output.path
+        // 否则只会清理第一个配置里面的。
+        new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: [path.join(process.cwd(), 'dist'), '!static-files*'], verbose: true }),
         new MiniCssExtractPlugin({
             filename: 'style/[name].[contenthash:4].css', // This option determines the name of each output bundle. The bundle is written to the directory specified by the output.path option.
             chunkFilename: 'style/[name].[contenthash:4].css', // This option determines the name of non-entry chunk files.

@@ -65,6 +65,7 @@ function APP() {
                 {/*<AnnualizedReturns />*/}
                 {/* <Game2048/> */}
                 {/* <ImageViewer imageList={imageList} onClose={() => undefined} /> */}
+                <classComponent />
             </main>
             <footer className="footer">
                 <div className="content vertical-center">
@@ -83,3 +84,13 @@ function APP() {
 APP.propTypes = {};
 
 export default APP;
+
+class classComponent extends React.Component {
+    public render() {
+        return (
+            <div>
+                Class Component
+            </div>
+        )
+    }
+}
