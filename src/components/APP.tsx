@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import "core-js";
 import './app.less';
 import IconButton from '../components/basic/IconButton/index';
-// import Game2048 from '../components/2048/index';
+import Game2048 from '../components/2048/index';
 import '../icons/index.less?iconImport=true';
 import '../icons/firstScreen/index.less?iconImport=true';
 import ImageViewer from './basic/pc/ImageViewer/index';
@@ -54,26 +55,27 @@ function APP() {
     return (
         <>
             <header className="header vertical-center">
-                {/* <IconButton iconName="edit" onClick={handleClick} />
+                <IconButton iconName="edit" onClick={handleClick} />
                 <IconButton iconName="home" onClick={handleClick} />
                 <IconButton iconName="back" onClick={handleClick} />
                 <IconButton iconName="down" onClick={handleClick} />
                 <IconButton iconName="close" onClick={handleClick} />
-                <IconButton iconName="search" onClick={handleClick} /> */}
+                <IconButton iconName="search" onClick={handleClick} />
             </header>
             <main className="main-content">
-                {/* <AnnualizedReturns /> */}
-                {/* <Game2048/> */}
-                {/* <ImageViewer imageList={imageList} onClose={() => undefined} /> */}
+                <AnnualizedReturns />
+                <Game2048/>
+                <ImageViewer imageList={imageList} onClose={() => undefined} />
+                <ClassComponent />
             </main>
             <footer className="footer">
                 <div className="content vertical-center">
-                    {/* <IconButton iconName="edit" onClick={handleClick} />
+                    <IconButton iconName="edit" onClick={handleClick} />
                     <IconButton iconName="home" onClick={handleClick} />
                     <IconButton iconName="back" onClick={handleClick} />
                     <IconButton iconName="close" onClick={handleClick} />
                     <IconButton iconName="search" onClick={handleClick} />
-                    <IconButton iconName="down" onClick={handleClick} /> */}
+                    <IconButton iconName="down" onClick={handleClick} />
                 </div>
             </footer>
         </>
@@ -83,3 +85,19 @@ function APP() {
 APP.propTypes = {};
 
 export default APP;
+
+class ClassComponent extends React.Component {
+    public render() {
+        return <div>
+            class Component
+        </div>
+    }
+}
+
+class Test {
+    public print() {
+        console.log('test class component');
+    }
+}
+const test = new Test();
+test.print();

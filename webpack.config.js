@@ -35,7 +35,16 @@ module.exports = [
                                     [
                                         '@babel/preset-env',
                                         {
-                                            targets: 'Chrome >= 60'
+                                            useBuiltIns: 'entry',
+                                            corejs: 3,
+                                            targets: {
+                                                chrome: 51,
+                                                firefox: 54,
+                                                opera: 38,
+                                                edge: 14,
+                                                safari: 10
+                                            },
+                                            modules: false
                                         }
                                     ],
                                     '@babel/preset-typescript',
