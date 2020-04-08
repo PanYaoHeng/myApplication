@@ -1,7 +1,7 @@
 /* eslint-disable */
 const merge = require('webpack-merge');
 const path = require('path');
-
+const getCommonConfig = require('./webpack.common');
 module.exports = merge({
     devtool: 'cheap-module-eval-source-map',
     module: {
@@ -36,4 +36,4 @@ module.exports = merge({
         overlay: true,
         historyApiFallback: true
     }
-});
+}, getCommonConfig(true));

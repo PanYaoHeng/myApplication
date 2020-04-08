@@ -8,8 +8,9 @@ const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const caaNano = require('cssnano');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const getCommonConfig = require('./webpack.common');
 
-module.exports = merge({
+const commonDevConfig = {
     module: {
         rules: [
             {
@@ -22,7 +23,7 @@ module.exports = merge({
                         options: { plugins: () => [require('autoprefixer')()] }
                     },
                     'less-loader',
-                    path.resolve(__dirname, '../webpackConfig/loader.ts')
+                    path.resolve(__dirname, './webpackLoader/loader.ts')
                 ]
             },
             {
@@ -57,7 +58,10 @@ module.exports = merge({
     plugins: [
         // 跑一次webpack任务只执行一次clean插件，所以这里要指定清理目录，不能依靠默认的清理output.path
         // 否则只会清理第一个配置里面的。
-        new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: [path.join(process.cwd(), 'dist'), '!static-files*'], verbose: true }),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: [path.join(process.cwd(), 'dist/**/*')],
+            verbose: true
+        }),
         new MiniCssExtractPlugin({
             filename: 'style/[name].[contenthash:4].css', // This option determines the name of each output bundle. The bundle is written to the directory specified by the output.path option.
             chunkFilename: 'style/[name].[contenthash:4].css', // This option determines the name of non-entry chunk files.
@@ -92,4 +96,12 @@ module.exports = merge({
     //     maxEntrypointSize: 50000, // in bytes, default 250k
     //     maxAssetSize: 450000, // in bytes
     // },
-});
+};
+module.exports = [
+    function () {
+        return merge(commonDevConfig, getCommonConfig(true));
+    },
+    function () {
+        return merge(commonDevConfig, getCommonConfig(false));
+    }
+];
