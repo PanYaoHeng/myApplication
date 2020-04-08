@@ -60,7 +60,7 @@ const commonDevConfig = {
         // 否则只会清理第一个配置里面的。
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [path.join(process.cwd(), 'dist/**/*')],
-            verbose: true
+            verbose: false
         }),
         new MiniCssExtractPlugin({
             filename: 'style/[name].[contenthash:4].css', // This option determines the name of each output bundle. The bundle is written to the directory specified by the output.path option.

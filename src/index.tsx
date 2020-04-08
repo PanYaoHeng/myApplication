@@ -10,3 +10,13 @@ ReactDOM.render(
     </Suspense>,
     rootContainer
 );
+
+const promise = new Promise(resolve => {
+    resolve('promise done');
+});
+promise.then(msg => {
+    console.log(msg);
+    
+}).finally(() => {
+    console.log('finaly');
+});
