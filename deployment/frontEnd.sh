@@ -10,6 +10,7 @@ mkdir ${IMAGE_NAME}
 cp deployment/frontEndDockerFile ./${IMAGE_NAME}/DockerFile
 cp deployment/frontEndNginxConfig.conf ./${IMAGE_NAME}/nginx.conf
 cp -r dist ./${IMAGE_NAME}/dist
+cp -r iptv ./${IMAGE_NAME}/iptv
 
 echo "构建完成，停止并删除原镜像:"
 docker stop ${CONTAINER_NAME}

@@ -1,5 +1,5 @@
 /* eslint-disable */
-const merge = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const path = require('path');
 const getCommonConfig = require('./webpack.common');
 module.exports = merge({
@@ -16,7 +16,7 @@ module.exports = merge({
                         options: { plugins: () => [require('autoprefixer')()] }
                     },
                     'less-loader',
-                    path.resolve(__dirname, 'loader.ts')
+                    path.resolve(__dirname, 'webpackLoader/loader.ts')
                 ]
             },
             {
