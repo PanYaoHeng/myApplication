@@ -1,4 +1,4 @@
 FROM nginx:latest
-ADD ./dist /var/html/
+ADD ./dist/ /var/html/
 ADD ./iptv/ /var/html/iptv/
 CMD ["/usr/sbin/nginx","-g","daemon off;"]
