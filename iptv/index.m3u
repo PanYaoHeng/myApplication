@@ -30,17 +30,11 @@ http://117.148.187.70/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/32212307
 #EXTINF:-1 tvg-id="cctvjilu" tvg-logo="cctv9.png",CCTV-9 纪录
 http://183.207.248.71:80/cntv/live1/HD-8000k-1080P-cctv9/HD-8000k-1080P-cctv9
 
-#EXTINF:-1 tvg-id="cctv10" tvg-logo="cctv10.png",CCTV-10 科教
-http://183.207.248.71:80/cntv/live1/HD-8000k-1080P-cctv10/HD-8000k-1080P-cctv10
-
 #EXTINF:-1 tvg-id="cctv11" tvg-logo="cctv11.png",CCTV-11 戏曲
 http://183.207.248.71:80/cntv/live1/n-cctv-11/n-cctv-11
 
 #EXTINF:-1 tvg-id="cctv12" tvg-logo="cctv12.png",CCTV-12 社会与法
 http://183.207.248.71:80/cntv/live1/HD-8000k-1080P-cctv12/HD-8000k-1080P-cctv12
-
-#EXTINF:-1 tvg-id="cctv13" tvg-logo="cctv13.png",CCTV-13 新闻
-http://183.207.248.71:80/cntv/live1/cctv-13/cctv-13
 
 #EXTINF:-1 ,CCTV13 4M1080
 http://117.148.187.46/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221230877/01.m3u8?fmt=ts2hls
@@ -53,9 +47,6 @@ http://117.148.187.59/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/32212306
 
 #EXTINF:-1 ,CCTV17 8M1080
 http://117.148.187.102/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229765/index.m3u8
-
-#EXTINF:-1 ,黑龙江卫视 Max4.5M1080
-http://39.134.176.163/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221230710/01.m3u8?fmt=ts2hls
 
 #EXTINF:-1 ,求索动物 8M1080
 http://117.148.187.85/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228980/01.m3u8?fmt=ts2hls
